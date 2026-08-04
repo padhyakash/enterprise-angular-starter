@@ -59,3 +59,5 @@ Thumbs.db
 
 # OS
 Desktop.ini
+
+vitest.config.*.timestamp*
