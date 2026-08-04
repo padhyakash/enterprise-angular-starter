@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  "files.eol": "\n",
+
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+
+  "files.trimTrailingWhitespace": true,
+
+  "files.insertFinalNewline": true
+}
