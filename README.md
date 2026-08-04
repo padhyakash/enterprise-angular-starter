@@ -1,177 +1,101 @@
-<div align="center">
+# EnterpriseAngularStarter
 
-# 🚀 Enterprise Angular Starter
+<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-### Production-ready Angular starter kit for building scalable enterprise applications.
+✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
 
-[![Angular](https://img.shields.io/badge/Angular-Latest-DD0031?logo=angular)](https://angular.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?logo=typescript)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
+[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
----
+## Run tasks
 
-**Build enterprise-grade Angular applications with confidence.**
+To run the dev server for your app, use:
 
-A modern, opinionated Angular starter template that demonstrates enterprise architecture, clean code, scalable project structure, testing, authentication, and developer best practices.
-
-⭐ If you find this project useful, please consider starring the repository.
-
-</div>
-
----
-
-# 🎯 Vision
-
-Building an Angular application is easy.
-
-Building an Angular application that remains maintainable after **2 years**, **20 developers**, and **100+ features** is much harder.
-
-This project aims to provide a production-ready foundation inspired by real-world enterprise applications.
-
----
-
-# ✨ Planned Features
-
-## Core
-
-- Latest Angular
-- Standalone Components
-- TypeScript
-- Signals
-- RxJS
-
-## Architecture
-
-- Feature-first folder structure
-- Scalable architecture
-- Shared UI library
-- Core module
-- Environment configuration
-
-## Authentication
-
-- JWT Authentication
-- Refresh Token
-- HTTP Interceptors
-- Route Guards
-- Role-Based Access Control (RBAC)
-
-## State Management
-
-- Signals
-- RxJS
-- NgRx (optional)
-
-## UI
-
-- Angular Material
-- AG Grid
-- Responsive Layout
-- Dark / Light Theme
-
-## Quality
-
-- ESLint
-- Prettier
-- Husky
-- Commitlint
-- Conventional Commits
-
-## Testing
-
-- Vitest
-- Component Testing
-- Unit Testing
-- Mock Utilities
-
-## DevOps
-
-- GitHub Actions
-- Docker
-- Environment Configurations
-
----
-
-# 📚 Documentation
-
-Documentation is available inside the **docs/** directory.
-
-Planned documentation includes:
-
-- Architecture
-- Folder Structure
-- Coding Standards
-- State Management
-- Authentication
-- Performance
-- Deployment
-
----
-
-# 🗺 Roadmap
-
-Current Version
-
-```
-v0.1.0
+```sh
+npx nx serve web
 ```
 
-Upcoming milestones:
+To create a production bundle:
 
-- Repository Setup
-- Project Architecture
-- Angular Setup
-- Authentication
-- Authorization
-- State Management
-- UI Components
-- Testing
-- CI/CD
-- v1.0 Production Release
+```sh
+npx nx build web
+```
 
-See **ROADMAP.md** for details.
+To see all available targets to run for a project, run:
 
----
+```sh
+npx nx show project web
+```
 
-# 🤝 Contributing
+These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
 
-Contributions are welcome!
+[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-If you'd like to improve this project:
+## Add new projects
 
-- Fork the repository
-- Create a feature branch
-- Submit a Pull Request
+While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
 
-Please read **CONTRIBUTING.md** before contributing.
+Use the plugin's generator to create new projects.
 
----
+To generate a new application, use:
 
-# 📄 License
+```sh
+npx nx g @nx/angular:app demo
+```
 
-This project is licensed under the MIT License.
+To generate a new library, use:
 
----
+```sh
+npx nx g @nx/angular:lib mylib
+```
 
-# 👨‍💻 Author
+You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
 
-**Akash Padhy**
+[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-Lead Frontend Engineer
+## Set up CI!
 
-Building scalable enterprise Angular applications.
+### Step 1
 
-GitHub:
-https://github.com/padhyakash
+To connect to Nx Cloud, run the following command:
 
-LinkedIn:
-https://linkedin.com/in/padhyakash
+```sh
+npx nx connect
+```
 
----
+Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
 
-## ⭐ Support
+- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-If this project helps you, consider giving it a ⭐.
+### Step 2
 
-It motivates continued development and helps others discover the project.
+Use the following command to configure a CI workflow for your workspace:
+
+```sh
+npx nx g ci-workflow
+```
+
+[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## Install Nx Console
+
+Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+
+[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## Useful links
+
+Learn more:
+
+- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
+- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+And join the Nx community:
+- [Discord](https://go.nx.dev/community)
+- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
+- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
+- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
