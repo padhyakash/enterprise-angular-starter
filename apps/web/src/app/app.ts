@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { ButtonComponent } from '@enterprise/ui';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
   selector: 'app-root',
+  imports: [ButtonComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
-  protected title = 'web';
-}
+export class App {}

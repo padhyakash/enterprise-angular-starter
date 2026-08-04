@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "strict": false,
     "paths": {
-      "@akashpadhy/button": ["./ui/src/index.ts"]
+      "@enterprise/ui": ["./ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

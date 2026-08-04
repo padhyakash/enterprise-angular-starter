@@ -1,2 +1,31 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<div class="showcase">
+  <h1>Enterprise Angular Starter</h1>
+
+  <section>
+    <h2>Variants</h2>
+
+    <lib-button variant="primary">Primary</lib-button>
+    <lib-button variant="secondary">Secondary</lib-button>
+    <lib-button variant="success">Success</lib-button>
+    <lib-button variant="danger">Danger</lib-button>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>Sizes</h2>
+
+    <lib-button size="sm">Small</lib-button>
+    <lib-button size="md">Medium</lib-button>
+    <lib-button size="lg">Large</lib-button>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>States</h2>
+
+    <lib-button [disabled]="true">Disabled</lib-button>
+    <lib-button [loading]="true">Loading</lib-button>
+  </section>
+</div>

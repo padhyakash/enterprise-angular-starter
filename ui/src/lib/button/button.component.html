@@ -1,1 +1,3 @@
-<p>Button works!</p>
+<button type="button" [disabled]="disabled() || loading()" [ngClass]="classes()">
+  <ng-content />
+</button>
