@@ -52,24 +52,18 @@ Example:
 export const APP_ROUTES: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./layout/app-layout.component')
-        .then(m => m.AppLayoutComponent),
+    loadComponent: () => import('./layout/app-layout.component').then((m) => m.AppLayoutComponent),
     children: [
       {
         path: 'dashboard',
-        loadChildren: () =>
-          import('@features/dashboard/routes')
-            .then(m => m.DASHBOARD_ROUTES)
+        loadChildren: () => import('@features/dashboard/routes').then((m) => m.DASHBOARD_ROUTES),
       },
       {
         path: 'users',
-        loadChildren: () =>
-          import('@features/users/routes')
-            .then(m => m.USER_ROUTES)
-      }
-    ]
-  }
+        loadChildren: () => import('@features/users/routes').then((m) => m.USER_ROUTES),
+      },
+    ],
+  },
 ];
 ```
 
@@ -92,10 +86,8 @@ dashboard/
 export const DASHBOARD_ROUTES: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./pages/dashboard.page')
-        .then(m => m.DashboardPage)
-  }
+    loadComponent: () => import('./pages/dashboard.page').then((m) => m.DashboardPage),
+  },
 ];
 ```
 
@@ -173,7 +165,7 @@ Role checks belong in guards or dedicated authorization services.
 Example:
 
 ```ts
-canActivate: [authGuard, permissionGuard]
+canActivate: [authGuard, permissionGuard];
 ```
 
 Avoid embedding permission checks directly inside components.

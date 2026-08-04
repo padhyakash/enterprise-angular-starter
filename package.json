@@ -1,8 +1,11 @@
 {
-  "name": "@enterprise-angular-starter/source",
+  "name": "@akashpadhy/enterprise-angular-starter",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~22.0.4",

@@ -195,14 +195,14 @@ Forbidden:
 
 # Allowed Dependency Matrix
 
-| From | Can Depend On |
-|------|----------------|
-| Apps | Features, Core, UI, Shared |
-| Features | UI, Shared, Core, Data Access |
-| UI | Shared |
-| Data Access | Core, Shared |
-| Shared | None |
-| Core | Shared |
+| From        | Can Depend On                 |
+| ----------- | ----------------------------- |
+| Apps        | Features, Core, UI, Shared    |
+| Features    | UI, Shared, Core, Data Access |
+| UI          | Shared                        |
+| Data Access | Core, Shared                  |
+| Shared      | None                          |
+| Core        | Shared                        |
 
 ---
 
@@ -251,9 +251,7 @@ Utilities should remain generic.
 Incorrect:
 
 ```ts
-shared/
-    validators/
-        dashboard-validator.ts
+shared / validators / dashboard - validator.ts;
 ```
 
 Correct:

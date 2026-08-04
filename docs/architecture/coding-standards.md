@@ -63,7 +63,7 @@ Good:
 
 ```ts
 function parse(value: unknown): User {
-    // ...
+  // ...
 }
 ```
 
@@ -79,8 +79,8 @@ function parse(value: any) {}
 
 ```ts
 export interface User {
-    id: number;
-    name: string;
+  id: number;
+  name: string;
 }
 ```
 
@@ -123,9 +123,9 @@ auth.interceptor.ts
 Use PascalCase.
 
 ```ts
-UserService
-DashboardComponent
-ApiInterceptor
+UserService;
+DashboardComponent;
+ApiInterceptor;
 ```
 
 ---
@@ -135,11 +135,11 @@ ApiInterceptor
 Use camelCase.
 
 ```ts
-currentUser
+currentUser;
 
-totalAmount
+totalAmount;
 
-selectedItems
+selectedItems;
 ```
 
 ---
@@ -168,11 +168,11 @@ Start with:
 Good:
 
 ```ts
-isLoggedIn
+isLoggedIn;
 
-hasPermission
+hasPermission;
 
-canEdit
+canEdit;
 ```
 
 ---
@@ -212,15 +212,13 @@ Reserve RxJS for asynchronous streams and external events.
 Preferred:
 
 ```html
-@if (user()) {
-    ...
-}
+@if (user()) { ... }
 ```
 
 Avoid:
 
 ```html
-<div *ngIf="user()">
+<div *ngIf="user()"></div>
 ```
 
 Use:
@@ -356,10 +354,7 @@ this.api.getUsers().subscribe(users => {
 Good:
 
 ```ts
-combineLatest([
-    this.api.getUsers(),
-    this.api.getRoles()
-]);
+combineLatest([this.api.getUsers(), this.api.getRoles()]);
 ```
 
 Use operators such as:

@@ -40,13 +40,13 @@ As the scope grows, the tooling becomes more sophisticated.
 
 # Decision Matrix
 
-| Scope | Recommended Tool |
-|--------|------------------|
-| Local component state | Signals |
-| Shared state within a feature | Signal Store / Component Store |
-| Shared state across multiple features | NgRx Store |
-| Remote server data | Data Access services + caching |
-| Application configuration | Core services |
+| Scope                                 | Recommended Tool               |
+| ------------------------------------- | ------------------------------ |
+| Local component state                 | Signals                        |
+| Shared state within a feature         | Signal Store / Component Store |
+| Shared state across multiple features | NgRx Store                     |
+| Remote server data                    | Data Access services + caching |
+| Application configuration             | Core services                  |
 
 Always start with the simplest option.
 
@@ -188,10 +188,7 @@ Always update state immutably.
 Good:
 
 ```ts
-this.users.update(users => [
-  ...users,
-  newUser
-]);
+this.users.update((users) => [...users, newUser]);
 ```
 
 Avoid mutating existing objects or arrays in place.
@@ -229,15 +226,15 @@ Store each piece of information once.
 Bad:
 
 ```ts
-users
-activeUsers
-inactiveUsers
+users;
+activeUsers;
+inactiveUsers;
 ```
 
 Good:
 
 ```ts
-users
+users;
 ```
 
 Derive additional values using `computed()`.
@@ -298,12 +295,12 @@ Avoid caching data that changes frequently unless there is a clear invalidation 
 
 Understand how long state should exist.
 
-| Lifetime | Example |
-|----------|---------|
-| Temporary | Open modal |
-| Page | Dashboard filters |
-| Session | Logged-in user |
-| Persistent | Theme preference |
+| Lifetime   | Example           |
+| ---------- | ----------------- |
+| Temporary  | Open modal        |
+| Page       | Dashboard filters |
+| Session    | Logged-in user    |
+| Persistent | Theme preference  |
 
 The lifetime should influence where the state is stored.
 
