@@ -1,0 +1,19 @@
+@use '../../tokens' as *;
+
+.card {
+  padding: $spacing-xl;
+
+  border-radius: $radius-md;
+
+  background: #fff;
+
+  box-shadow: $shadow-sm;
+
+  transition:
+    box-shadow $transition-normal,
+    transform $transition-fast;
+}
+
+.card:hover {
+  box-shadow: $shadow-md;
+}
