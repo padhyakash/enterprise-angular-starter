@@ -2,73 +2,100 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is inspired by Keep a Changelog and this project follows Semantic Versioning.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
+and this project follows [Semantic Versioning](https://semver.org/).
+
+---
+
+## [0.3.0] - 2026-08-07
+
+### ✨ Added
+
+#### UI Library
+
+- Added **InputComponent**.
+- Added support for:
+  - Label
+  - Placeholder
+  - Hint text
+  - Error message
+  - Required indicator
+  - Disabled state
+  - Readonly state
+  - Invalid state
+  - Password visibility toggle
+- Implemented Angular Signals using `input()`, `signal()` and `computed()`.
+- Added modern Angular control flow (`@if`).
+- Added accessibility support:
+  - `aria-invalid`
+  - `aria-required`
+  - `aria-describedby`
+  - Password toggle `aria-label`
+  - Password toggle `aria-pressed`
+
+#### Testing
+
+- Added comprehensive Vitest unit tests for `InputComponent`.
+
+#### Showcase
+
+- Added Input component examples to the showcase application.
+
+#### CI/CD
+
+- Added GitHub Actions workflow for:
+  - Formatting
+  - Linting
+  - Unit Tests
+  - Build Validation
 
 ---
 
 ## [0.2.0] - 2026-08-07
 
-### Added
+### ✨ Added
 
 #### Core Library
 
-- Added **LoggerService** for centralized application logging.
-- Added strongly typed logging models.
-- Added comprehensive unit tests for LoggerService.
+- Added `LoggerService`.
+- Added configurable logger support.
+- Added Core providers.
+- Added `GlobalErrorHandler`.
+- Added configuration folder structure.
+- Added Vitest unit tests for all core services.
 
-#### Configuration
+#### Project
 
-- Added **ConfigService**.
-- Added **APP_CONFIG** InjectionToken.
-- Added strongly typed `AppConfig` interface.
-- Added unit tests for ConfigService.
-
-#### Providers
-
-- Added `provideCore()` helper for configuring the Core library.
-- Added typed provider configuration.
-- Added unit tests for Core providers.
-
-#### Error Handling
-
-- Added **GlobalErrorHandler**.
-- Integrated GlobalErrorHandler with LoggerService.
-- Registered GlobalErrorHandler through `provideCore()`.
-- Added unit tests for GlobalErrorHandler.
-
-### Improved
-
-- Established enterprise folder conventions for the Core library.
-- Added public API exports for all Core modules.
-- Added component-level documentation (README files).
+- Added semantic versioning.
+- Added GitHub Releases.
+- Improved project architecture.
 
 ---
 
 ## [0.1.0] - 2026-08-05
 
-### Added
-
-#### Workspace
-
-- Nx Workspace
-- Angular 22
-- Vitest
-- Husky
-- Commitlint
-- Prettier
+### ✨ Initial Release
 
 #### UI Library
 
-- Design Token system
-- Button component
-- Card component
-- Shared UI architecture
+- Added `ButtonComponent`.
+- Added `CardComponent`.
+
+#### Design System
+
+- Introduced design tokens:
+  - Colors
+  - Typography
+  - Spacing
+  - Radius
+  - Shadows
+  - Transitions
 
 #### Testing
 
-- Added unit tests for Button component.
-- Added unit tests for Card component.
+- Added Vitest configuration.
+- Added unit tests for Button and Card.
 
-#### Application
+#### Showcase
 
-- Added Showcase application for component preview.
+- Added demo application for UI components.
