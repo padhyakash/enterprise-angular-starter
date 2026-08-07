@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "strict": false,
     "paths": {
-      "@enterprise/ui": ["./ui/src/index.ts"]
+      "@enterprise/ui": ["./ui/src/index.ts"],
+      "@akashpadhy/core": ["./core/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
