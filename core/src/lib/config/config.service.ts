@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { APP_CONFIG } from './app-config.token';
 import { AppConfig } from './config.types';
 
@@ -12,10 +12,7 @@ import { AppConfig } from './config.types';
   providedIn: 'root',
 })
 export class ConfigService {
-  constructor(
-    @Inject(APP_CONFIG)
-    private readonly config: AppConfig,
-  ) {}
+  private readonly config = inject<AppConfig>(APP_CONFIG);
 
   get apiUrl(): string {
     return this.config.apiUrl;
