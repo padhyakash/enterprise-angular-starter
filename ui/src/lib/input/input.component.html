@@ -1,0 +1,48 @@
+<div class="input">
+  @if (label()) {
+    <label class="input__label" [for]="id()">
+      {{ label() }}
+
+      @if (required()) {
+        <span class="input__required">*</span>
+      }
+    </label>
+  }
+
+  <div class="input__wrapper">
+    <input
+      class="input__field"
+      [class.input__field--invalid]="invalid()"
+      [id]="id()"
+      [type]="inputType()"
+      [value]="value()"
+      [placeholder]="placeholder()"
+      [disabled]="disabled()"
+      [readonly]="readonly()"
+      [required]="required()"
+      [attr.aria-invalid]="invalid()"
+      [attr.aria-required]="required()"
+      [attr.aria-describedby]="error() ? errorId() : hint() ? hintId() : null"
+    />
+
+    @if (showPasswordToggle() && type() === 'password') {
+      <button
+        type="button"
+        class="input__toggle"
+        [attr.aria-label]="passwordVisible() ? 'Hide password' : 'Show password'"
+        [attr.aria-pressed]="passwordVisible()"
+        (click)="togglePasswordVisibility()"
+      ></button>
+    }
+  </div>
+
+  @if (error()) {
+    <div class="input__error" [id]="errorId()">
+      {{ error() }}
+    </div>
+  } @else if (hint()) {
+    <div class="input__hint" [id]="hintId()">
+      {{ hint() }}
+    </div>
+  }
+</div>
