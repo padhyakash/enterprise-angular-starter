@@ -46,6 +46,10 @@ export class InputComponent {
     return this.passwordVisible() ? 'text' : 'password';
   });
 
+  readonly hintId = computed(() => `${this.id()}-hint`);
+
+  readonly errorId = computed(() => `${this.id()}-error`);
+
   togglePasswordVisibility(): void {
     this.passwordVisible.update((visible) => !visible);
   }
