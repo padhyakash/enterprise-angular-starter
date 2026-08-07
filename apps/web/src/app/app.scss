@@ -1,15 +1,55 @@
 .showcase {
-  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+
+  font-family: Inter, Arial, sans-serif;
+
+  &__subtitle {
+    margin-bottom: 3rem;
+
+    color: #64748b;
+    font-size: 1rem;
+  }
+
+  &__section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-shadow: 0 8px 24px rgb(0 0 0 / 4%);
+  }
 
   h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
   }
 
-  section {
-    margin-bottom: 2rem;
+  h2 {
+    margin-bottom: 1.5rem;
+
+    color: #0f172a;
+
+    font-size: 1.25rem;
+    font-weight: 600;
   }
 
-  lib-button {
-    margin-right: 1rem;
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    margin-bottom: 1.5rem;
+  }
+
+  &__form {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 420px;
   }
 }

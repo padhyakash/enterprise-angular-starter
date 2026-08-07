@@ -1,0 +1,41 @@
+<div class="input">
+  @if (label()) {
+    <label class="input__label" [for]="id()">
+      {{ label() }}
+
+      @if (required()) {
+        <span class="input__required">*</span>
+      }
+    </label>
+  }
+
+  <div class="input__wrapper">
+    <input
+      class="input__field"
+      [class.input__field--invalid]="invalid()"
+      [id]="id()"
+      [type]="inputType()"
+      [value]="value()"
+      [placeholder]="placeholder()"
+      [disabled]="disabled()"
+      [readonly]="readonly()"
+      [required]="required()"
+    />
+
+    @if (showPasswordToggle() && type() === 'password') {
+      <button type="button" class="input__toggle" (click)="togglePasswordVisibility()">
+        {{ passwordVisible() ? '🙈' : '👁️' }}
+      </button>
+    }
+  </div>
+
+  @if (error()) {
+    <p class="input__error">
+      {{ error() }}
+    </p>
+  } @else if (hint()) {
+    <p class="input__hint">
+      {{ hint() }}
+    </p>
+  }
+</div>

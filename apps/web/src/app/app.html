@@ -1,43 +1,45 @@
 <div class="showcase">
   <h1>Enterprise Angular Starter</h1>
 
-  <section>
-    <h2>Variants</h2>
+  <p class="showcase__subtitle">
+    Reusable UI components built with Angular 22, Signals and Vitest.
+  </p>
 
-    <lib-button variant="primary">Primary</lib-button>
-    <lib-button variant="secondary">Secondary</lib-button>
-    <lib-button variant="success">Success</lib-button>
-    <lib-button variant="danger">Danger</lib-button>
+  <section class="showcase__section">
+    <h2>Buttons</h2>
+
+    <div class="showcase__row">
+      <lib-button variant="primary">Primary</lib-button>
+      <lib-button variant="secondary">Secondary</lib-button>
+      <lib-button variant="success">Success</lib-button>
+      <lib-button variant="danger">Danger</lib-button>
+    </div>
+
+    <div class="showcase__row">
+      <lib-button size="sm">Small</lib-button>
+      <lib-button size="md">Medium</lib-button>
+      <lib-button size="lg">Large</lib-button>
+    </div>
+
+    <div class="showcase__row">
+      <lib-button [disabled]="true">Disabled</lib-button>
+      <lib-button [loading]="true">Loading</lib-button>
+    </div>
   </section>
 
-  <hr />
+  <section class="showcase__section">
+    <h2>Input</h2>
 
-  <section>
-    <h2>Sizes</h2>
+    <div class="showcase__form">
+      <lib-input label="Email" placeholder="Enter your email"> </lib-input>
 
-    <lib-button size="sm">Small</lib-button>
-    <lib-button size="md">Medium</lib-button>
-    <lib-button size="lg">Large</lib-button>
-  </section>
+      <lib-input label="Password" type="password" [showPasswordToggle]="true"> </lib-input>
 
-  <hr />
+      <lib-input label="Username" value="akashpadhy" [readonly]="true"> </lib-input>
 
-  <section>
-    <h2>States</h2>
+      <lib-input label="Disabled Input" value="Disabled" [disabled]="true"> </lib-input>
 
-    <lib-button [disabled]="true">Disabled</lib-button>
-    <lib-button [loading]="true">Loading</lib-button>
+      <lib-input label="Email" [invalid]="true" error="Email is required"> </lib-input>
+    </div>
   </section>
 </div>
-
-<!-- ==========================================================
-     Card
-=========================================================== -->
-
-<h2>Card</h2>
-
-<lib-card>
-  <h3>Enterprise Angular Starter</h3>
-
-  <p>This card uses the shared design tokens.</p>
-</lib-card>
