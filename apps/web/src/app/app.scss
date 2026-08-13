@@ -53,3 +53,19 @@
     max-width: 420px;
   }
 }
+
+.showcase__icons {
+  align-items: center;
+}
+
+.showcase__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  min-width: 80px;
+
+  color: #475569;
+  font-size: 0.875rem;
+}
