@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
-
+import { IconComponent } from '../icon';
 import { InputType } from './input.types';
 
 @Component({
   selector: 'lib-input',
   standalone: true,
-  imports: [],
+  imports: [IconComponent],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
