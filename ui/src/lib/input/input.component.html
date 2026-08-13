@@ -32,7 +32,9 @@
         [attr.aria-label]="passwordVisible() ? 'Hide password' : 'Show password'"
         [attr.aria-pressed]="passwordVisible()"
         (click)="togglePasswordVisibility()"
-      ></button>
+      >
+        <lib-icon [name]="passwordVisible() ? 'eye-off' : 'eye'" size="sm" />
+      </button>
     }
   </div>
 
