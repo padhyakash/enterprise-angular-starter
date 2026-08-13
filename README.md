@@ -1,102 +1,427 @@
-# EnterpriseAngularStarter
+# Enterprise Angular Starter
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+> A modern, scalable Angular UI foundation built with Angular, Nx, Signals, Vitest, accessibility, and reusable design patterns.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+[![CI](https://github.com/padhyakash/enterprise-angular-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/padhyakash/enterprise-angular-starter/actions)
+[![Latest Release](https://img.shields.io/github/v/release/padhyakash/enterprise-angular-starter)](https://github.com/padhyakash/enterprise-angular-starter/releases)
+[![License](https://img.shields.io/github/license/padhyakash/enterprise-angular-starter)](https://github.com/padhyakash/enterprise-angular-starter)
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+## 🚀 Overview
 
-## Run tasks
+**Enterprise Angular Starter** is a modern Angular workspace focused on building reusable, accessible, tested, and maintainable UI components and core application infrastructure.
 
-To run the dev server for your app, use:
+The project is built with:
 
-```sh
-npx nx serve web
+- **Angular**
+- **Nx**
+- **TypeScript**
+- **Angular Signals**
+- **Vitest**
+- **SCSS**
+- **Design Tokens**
+- **Accessibility / ARIA**
+- **GitHub Actions**
+
+The goal is not to create a large collection of components quickly.
+
+The goal is to establish **strong engineering patterns** that can scale as the library grows.
+
+---
+
+## ✨ Current Components
+
+### UI
+
+| Component | Status |
+| --------- | ------ |
+| Button    | ✅     |
+| Card      | ✅     |
+| Input     | ✅     |
+| Icon      | ✅     |
+
+### Core
+
+| Feature              | Status |
+| -------------------- | ------ |
+| Logger Service       | ✅     |
+| Configuration        | ✅     |
+| Providers            | ✅     |
+| Global Error Handler | ✅     |
+
+---
+
+## 🎨 UI Components
+
+### Button
+
+Supports multiple variants and sizes.
+
+```html
+<lib-button variant="primary"> Primary </lib-button>
+
+<lib-button variant="secondary"> Secondary </lib-button>
+
+<lib-button variant="success"> Success </lib-button>
+
+<lib-button variant="danger"> Danger </lib-button>
 ```
 
-To create a production bundle:
+Sizes:
 
-```sh
+```html
+<lib-button size="sm">Small</lib-button>
+<lib-button size="md">Medium</lib-button>
+<lib-button size="lg">Large</lib-button>
+```
+
+---
+
+### Card
+
+A lightweight reusable content container.
+
+```html
+<lib-card>
+  <h3>Enterprise Angular Starter</h3>
+
+  <p>Reusable content inside a shared card component.</p>
+</lib-card>
+```
+
+---
+
+### Input
+
+The Input component provides common enterprise form functionality.
+
+```html
+<lib-input label="Email" placeholder="Enter your email"> </lib-input>
+```
+
+Password input:
+
+```html
+<lib-input label="Password" type="password" [showPasswordToggle]="true"> </lib-input>
+```
+
+Supported features include:
+
+- Label
+- Placeholder
+- Required state
+- Disabled state
+- Readonly state
+- Invalid state
+- Hint text
+- Error message
+- Password visibility toggle
+- Accessibility attributes
+
+---
+
+### Icon
+
+A reusable SVG-based icon component.
+
+Currently supported:
+
+- `eye`
+- `eye-off`
+
+```html
+<lib-icon name="eye"></lib-icon>
+
+<lib-icon name="eye-off" size="md"> </lib-icon>
+```
+
+Available sizes:
+
+```text
+sm → 16px
+md → 20px
+lg → 24px
+```
+
+Icons support accessibility labels and decorative `aria-hidden` behavior.
+
+---
+
+## 🏗️ Architecture
+
+The workspace is organized around reusable libraries and applications.
+
+```text
+enterprise-angular-starter/
+│
+├── apps/
+│   └── web/
+│       └── Showcase application
+│
+├── ui/
+│   └── src/
+│       ├── lib/
+│       │   ├── button/
+│       │   ├── card/
+│       │   ├── input/
+│       │   ├── icon/
+│       │   ├── tokens/
+│       │   └── types/
+│       │
+│       └── index.ts
+│
+├── core/
+│   └── src/
+│       └── lib/
+│           ├── logger/
+│           ├── config/
+│           ├── providers/
+│           └── error-handler/
+│
+├── .github/
+│   └── workflows/
+│
+└── CHANGELOG.md
+```
+
+---
+
+## 🧩 Design Principles
+
+The project follows a few core principles.
+
+### Modern Angular
+
+New components use Angular's modern APIs such as:
+
+```ts
+input();
+signal();
+computed();
+```
+
+and standalone components.
+
+### Accessibility First
+
+Interactive components should provide appropriate keyboard behavior and ARIA semantics.
+
+Examples include:
+
+- `aria-invalid`
+- `aria-required`
+- `aria-describedby`
+- accessible button labels
+- decorative icon handling
+
+### Reusable Design Tokens
+
+Shared styling values are centralized rather than duplicated throughout individual components.
+
+### Testable by Default
+
+Components and services are covered with **Vitest** tests.
+
+### Small Public APIs
+
+Components should expose only the configuration that consumers actually need.
+
+### Composition Over Duplication
+
+Reusable primitives such as `IconComponent` are composed into higher-level components rather than duplicating their implementation.
+
+---
+
+## 🧪 Testing
+
+Run all UI tests:
+
+```bash
+npx nx test ui
+```
+
+Run the complete test target:
+
+```bash
+npx nx run-many -t test
+```
+
+---
+
+## 🏗️ Build
+
+Build the UI library:
+
+```bash
+npx nx build ui
+```
+
+Build the showcase application:
+
+```bash
 npx nx build web
 ```
 
-To see all available targets to run for a project, run:
+---
 
-```sh
-npx nx show project web
+## 🔍 Lint
+
+Run UI linting:
+
+```bash
+npx nx lint ui
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+---
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## 💻 Development
 
-## Add new projects
+Start the showcase application:
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/angular:app demo
+```bash
+npx nx serve web
 ```
 
-To generate a new library, use:
+The showcase provides examples of the available components and their supported states.
 
-```sh
-npx nx g @nx/angular:lib mylib
+---
+
+## 🔄 CI
+
+The project uses GitHub Actions to validate changes.
+
+Pull requests and pushes are validated through automated checks including:
+
+- Formatting
+- Linting
+- Unit tests
+- Build validation
+
+The goal is to prevent broken code from reaching the main branch.
+
+---
+
+## 📦 Release History
+
+| Version  | Release          |
+| -------- | ---------------- |
+| `v0.1.0` | UI Foundation    |
+| `v0.2.0` | Core Foundation  |
+| `v0.3.0` | Enterprise Input |
+| `v0.4.0` | Icon System      |
+
+See the [CHANGELOG](CHANGELOG.md) for detailed release information.
+
+---
+
+## 🗺️ Roadmap
+
+The project is being developed incrementally.
+
+### v0.5.0
+
+Selection controls:
+
+- Checkbox
+- Radio
+- Switch
+
+### Future
+
+Planned areas include:
+
+- Textarea
+- Select
+- Autocomplete
+- Dialog
+- Drawer
+- Toast
+- Table
+- Pagination
+- Expanded icon system
+- Improved documentation
+- Storybook
+- Automated package releases
+
+The roadmap may evolve as the project grows.
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and discussions are welcome.
+
+Before opening a pull request:
+
+1. Create a feature branch.
+2. Implement the change.
+3. Add or update tests.
+4. Run linting and builds locally.
+5. Update documentation when necessary.
+6. Open a pull request.
+
+For component contributions, the preferred workflow is:
+
+```text
+API
+ ↓
+Implementation
+ ↓
+Styling
+ ↓
+Accessibility
+ ↓
+Tests
+ ↓
+Documentation
+ ↓
+Showcase
+ ↓
+Release
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+---
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## 📋 Development Philosophy
 
-## Set up CI!
+This project is being built as a long-term Angular engineering project rather than as a collection of isolated UI components.
 
-### Step 1
+Each release focuses on establishing reusable patterns that can be applied to future components.
 
-To connect to Nx Cloud, run the following command:
+The priorities are:
 
-```sh
-npx nx connect
+```text
+Architecture
+    ↓
+Accessibility
+    ↓
+Testability
+    ↓
+Consistency
+    ↓
+Developer Experience
 ```
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
+---
 
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## 📄 License
 
-### Step 2
+This project is licensed under the MIT License.
 
-Use the following command to configure a CI workflow for your workspace:
+---
 
-```sh
-npx nx g ci-workflow
-```
+## 👨‍💻 Author
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+**Akash Padhy**
 
-## Install Nx Console
+Lead Frontend Engineer focused on Angular, TypeScript, UI architecture, and scalable frontend systems.
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+- GitHub: [@padhyakash](https://github.com/padhyakash)
+- LinkedIn: [Akash Padhy](https://www.linkedin.com/in/padhyakash/)
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+---
 
-## Useful links
+## ⭐ Support the Project
 
-Learn more:
+If you find this project useful or interesting, consider giving it a ⭐ on GitHub.
 
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Follow the project as it evolves toward its first stable `v1.0.0` release.
