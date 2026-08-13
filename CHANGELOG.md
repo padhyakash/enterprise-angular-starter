@@ -7,6 +7,37 @@ and this project follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+[0.4.0] - 2026-08-13
+✨ Added
+UI Library
+Added reusable IconComponent.
+Added support for the following icons:
+eye
+eye-off
+Added icon size variants:
+sm
+md
+lg
+Added accessible icon support with optional labels.
+Decorative icons are automatically marked as aria-hidden.
+Input
+Integrated IconComponent into the password visibility toggle.
+Added eye and eye-off states to the password toggle.
+Improved the visual consistency of the password input control.
+Testing
+Added comprehensive Vitest tests for IconComponent.
+Added tests covering icon rendering, sizes, accessibility, and password-toggle integration.
+Showcase
+Added an Icons section to the showcase application.
+Added examples for icon sizes and available icons.
+Public API
+Exported IconComponent, IconName, and IconSize through the UI library public API.
+🏗️ Architecture
+Established Icon as a reusable foundation component for future UI components.
+Standardized component-level public exports through index.ts.
+
+---
+
 ## [0.3.0] - 2026-08-07
 
 ### ✨ Added
